@@ -1,0 +1,300 @@
+<!-- TODO 1: Create the HTML Boilerplate -->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- TODO 2: Add Your previous projects' HTML into the public folder -->
+<head>
+<meta charset="UTF-8">
+<title>Selin's Portfolio</title>
+<style>
+    p {
+        font-family: roboto;
+        text-align: center;
+    }
+    a {
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p.name {
+        font-size: 3em;
+        margin-bottom: 0;
+        font-family: instrument-serif;
+    }
+
+    .title-card > p {
+        font-family: instrument-serif;
+    }
+
+    p.portfolio-tag {
+        font-size: 1.2em;
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-family: instrument-serif;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 100px 200px;
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .grid-container.two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 100px 200px 200px;
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .card {
+      background-color: rgb(1, 42, 6);
+      color: white;
+      font-size: 1em;
+    }
+
+    .header {
+        grid-column: span 3;
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: roboto;
+        margin-top: 0;
+    }
+
+ /*   @media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+*/
+    .first.card {
+        grid-column: span 3;
+        font-size: 3em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%; /* Ensure the card takes the full height of the grid cell */
+    }
+
+    .grid-container.two .first.card {
+        grid-column: span 2;
+
+        width: 100%;
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        border-radius: 10px;
+        
+        position: relative;
+        overflow: hidden; /* Ensure child elements don't overflow */
+    }
+
+    .card:not(.first) img {
+        width: 100%;
+        height: auto;
+        opacity: 0.7;
+        height: 200px;
+        width: auto;
+    }
+
+    .card:not(.first) .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        z-index: 2;
+        opacity: 0; /* Initially set opacity to 0 */
+        transition: opacity 0.5s ease; /* Add a smooth transition effect */
+    }
+
+    .card:hover .overlay-text {
+        opacity: 1; /* Set opacity to 1 on hover */
+    }
+
+    .navbar {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border-radius: 10px;
+        }
+
+    .navbar a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;      
+    }
+
+    .image-container {
+        text-align: center;
+    }
+  
+    
+    .image-container a {
+        display: block;
+        margin-top: 20px; 
+        margin-bottom: 10px;
+    }
+
+    .title-card.about-card {
+        height: 100px !important;
+        margin-bottom: 10px;
+        font-family: instrument-serif;
+    }
+
+    .selfie {
+        height: 200px;
+        border-radius: 25%;
+    }
+
+</style>
+<link rel="stylesheet" href="./style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <section class="header my-portfolio">
+        <p class="name">Selin Saracoglu</p>
+        <p class="portfolio-tag">Computer Science Portfolio</p>
+        <hr/>
+
+       <!--  FlexBox for About Me / Contact Info / Resume links -->
+        <div class="navbar">
+            <a href="./public/about.html">About Me</a>
+            <a href="./public/contact.html">Contact Info</a>
+            <a href="./public/resume.html">Resume</a>
+        </div>
+
+        <!-- Add any other header content here -->
+    </section>
+
+        <!-- Go in order of Most Recent / Interesting first -->
+    <div class="grid-container">
+      <div class="first card title-card"><p>Java GUI Projects</p></div>
+
+    <a href="https://github.com/selincs/CSE248Project">
+        <div class="assignment-project card">
+            <img src="./assets/images/ProjPreview1.png" alt="Project Preview">
+                <div class="overlay-text">
+                    <p>Instructor & Course Assignments for College Admins(2023)</p>
+                    <p>Assign teachers to classes with data all parsed from Excel sheets</p>
+                </div>
+        </div>
+    </a>
+
+    <a href="https://github.com/selincs/textAnalyzer">
+        <div class="text-analyzer card">
+            <img src="./assets/images/textAnalyzer.png" alt="Project Preview">
+            <div class="overlay-text">
+                <p>Text Analysis and Generation(2023)</p>
+                <p>Read and create paragraphs based on following words</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://github.com/selincs/stockProject">
+        <div class="stock-project card">
+            <img src="./assets/images/stock1.png" alt="Project Preview">
+            <div class="overlay-text">
+                <p>Stock Portfolio Project(2022)</p>
+                <p>Create an account and login to buy stocks with real time stock data</p>
+            </div>
+        </div>
+    </a>
+</div>
+
+
+
+    <div class="grid-container two">
+        <div class="first card title-card"><p>HTML Projects</p></div>
+    
+            <a href="./public/movie-ranking.html">
+            <div class="card">
+                <img src="./assets/images/movie-ranking.png" alt="Project Preview">
+                <div class="overlay-text">
+                    <p>Top 3 Media Ranking List</p>
+                    <p>First HTML Project!</p>
+                </div>
+            </div>
+        </a>
+  
+        <a href="./public/birthday-invite.html">
+            <div class="card">
+                <img src="./assets/images/birthday-invite.png" alt="Project Preview">
+                <div class="overlay-text">
+                    <p>Birthday Invite Page</p>
+                    <p>Second HTML project!</p>
+                </div>
+            </div>
+        </a>
+  
+    <a href="./public/meme.html">
+          <div class="card">
+              <img src="./assets/images/the boys.jpg" alt="Project Preview">
+              <div class="overlay-text">
+                  <p>My First Meme :)</p>
+                  <p>Meming in HTML</p>
+              </div>
+          </div>
+    </a>
+
+    <a href="./public/flagCSS.html">
+        <div class="card">
+            <img src="./assets/images/flagDivs.jpg" alt="Project Preview">
+            <div class="overlay-text">
+                <p>Laos Flag with Divs and CSS</p>
+                <p>"Centering a div is easy and cool"</p>
+            </div>
+        </div>
+    </a>
+    </div>
+
+
+    <div class="first card title-card about-card"><p>About Me</p></div>
+
+
+
+
+<div class="image-container">
+    <img class="selfie" src="./assets/images/webselfiecrop.png" height="200" alt="Selfie">
+    <a href="https://github.com/selincs">GitHub: selincs</a>
+</div>
+
+    <p>I'm currently a second year student at Suffolk County Community College in the Computer Science program. I took an interest in Computer Science
+   after having spent most of my adolsecent life growing up on the Internet. Art, music, video games, music, social media: so many of my interests and hobbies
+   in this world are enabled by things I couldn't understand, and I wanted to change that. I love learning new things, and the field of Computer Science
+   at first was initially a terrifying prospect to a former Arts and English Languages student who found I thrived in most courses but had carefully 
+   avoided math most of her life.</p>
+    
+   <p>Honestly speaking, I wasn't sure I'd be a good fit for this type of coursework at first. I avoided math in High School and my first time in College
+    because I found it difficult and I had only found hardship and frustration. But out of desire to challenge myself in returning to school, and build a
+    better life for myself going forward, unafraid of tackling challenges. I began in Precalculus. Through patience and perseverance, I overcame my 
+    aversion to math, and found myself more curious with each class I took, as it explains so much of how not just Computer Science works, but the world 
+    we live in as well. 
+   </p>
+
+   <p>Having overcome my fear of math, learned about object-oriented programming and tight-coupling, I found myself suddenly interested
+    by the enormous world of walls of text that I had once seen as insurmountable alphabet soup. Every Programming class brought new challenges
+    to myself, and I learned to not fear challenge, but to work hard through it and persevere further. There is no loss in failure, only in my
+    fear of it! My next projects will be learning Javascript, more HTML and CSS, distancing myself from tight-coupling in my codework, and 
+    understanding coding Design Patterns.
+   </p>
+
+<p>Copyright © SELIN 2023</p>
+</body>
+</html>
